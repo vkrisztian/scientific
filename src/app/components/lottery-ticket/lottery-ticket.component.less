@@ -1,0 +1,47 @@
+.tile {
+    color: red;
+    border: 1.4px solid red;
+    width: 15px;
+    height: 15px;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+
+    .selected {
+        background-image: linear-gradient(to bottom right,  transparent calc(50% - 1px), black, transparent calc(50% + 1px)), linear-gradient(to top right,  transparent calc(50% - 1px), black, transparent calc(50% + 1px));
+    }
+}
+
+.watermark {
+    position: absolute;
+    color: black;
+    opacity: 0.25;
+    font-size: 9em;
+    top: -0.18em;
+    left: 25%;
+    text-align: center;
+    z-index: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    pointer-events: none;
+}
+
+.button {
+    cursor: pointer;
+    color:red;
+    font-size: 0.75em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    padding-left: 2px;
+    display: inline-block;
+
+    &.delete {
+        float: right;
+    }
+
+    .text {
+        margin-left: 5px;
+    }
+}

@@ -1,0 +1,13 @@
+<div>
+    <div class="ticketsContainer" *ngFor="let ticket of tickets">
+        <app-lottery-ticket [properties]=ticket></app-lottery-ticket>
+    </div>
+    <div class="buttonContainer">
+        <button class="play" (click)="play()">Play</button>
+    </div>
+    <div *ngIf=playPressed>
+        <li class="result" *ngFor="let ticket of tickets; index as i">
+            Panel {{i + 1}}: {{getResult(ticket)}}
+        </li>
+    </div>
+</div>

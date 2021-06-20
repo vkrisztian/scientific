@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="userList">
+        <p class="title">Bediener</p>
+        <p class="record" (click)="selectUser(user)" *ngFor="let user of users">
+            {{getUserDisplayName(user)}}
+        </p>
+    </div>
+    <div style="width: 100%;">
+        <div class="card">
+            <p class="header"></p>
+            <div class="form">
+                <div class="formElement">
+                    <label for="userId">Bediener-Nummer</label>
+                    <input class="formInput" id="userId" [(ngModel)]="userId">
+                </div>
+                <div class="formElement">
+                    <label for="password">Bediener-Passwort</label>
+                    <input class="formInput" type="password" id="password" [(ngModel)]="password">
+                </div>
+            </div>
+        </div>
+        <div class="error" *ngIf="hasError">
+            Falscher Benutzername oder falsches Passwort
+        </div>
+        <div>
+            <button class="confirm" (click)="login()">OK</button>
+        </div>
+    </div>
+</div>

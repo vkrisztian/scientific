@@ -1,0 +1,22 @@
+<div>
+    <div class="button" (click)="randomize()">
+        <i class="fa fa-random"></i><Span class="text">RND</Span>
+    </div>
+    <div class="delete button" (click)="initializeTiles()">
+        <i class="fa fa-trash"></i><Span class="text">Del</Span>
+    </div>
+</div>
+<div style="position: relative;">
+    <table>
+        <tr *ngFor="let row of table; index as i;">
+            <td class="tile" *ngFor="let tile of row.tiles; index as j;">
+                <span [class.selected]="isSelected(i, j)" (click)="onSelect(i, j)">
+                    {{(properties.width * i) + j + 1}}
+                </span>
+            </td>
+        </tr>
+    </table>
+    <div class="watermark">
+        {{properties.indexValue+1}}
+    </div>
+</div>
